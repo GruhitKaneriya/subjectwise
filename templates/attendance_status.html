@@ -1,0 +1,23 @@
+<!-- attendance_status.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Status</title>
+</head>
+<body>
+<div class="container">
+    <h1>Attendance Status for {{ subject }}</h1>
+    {% if user_present %}
+    <p>You were present in {{ subject }}. Date and Time of attendance:</p>
+    <ul>
+        {% for date in user_attendance %}
+        <li>{{ date }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>You were absent in {{ subject }}.</p>
+    {% endif %}
+</div>
+</body>
+</html>
